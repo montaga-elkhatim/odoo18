@@ -6,4 +6,4 @@ COPY odoo.conf /etc/odoo/odoo.conf
 
 USER odoo
 
-CMD ["odoo", "-c", "/etc/odoo/odoo.conf", "-i", "base", "--stop-after-init"]
+CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
