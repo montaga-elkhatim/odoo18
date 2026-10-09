@@ -2,6 +2,8 @@ FROM odoo:18.0
 
 USER root
 
-RUN pip3 install --break-system-packages psycopg2-binary
+COPY odoo.conf /etc/odoo/odoo.conf
 
 USER odoo
+
+CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
