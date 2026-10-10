@@ -9,4 +9,4 @@ RUN ls -l /usr/local/bin/reset_password.py
 
 USER odoo
 
-CMD ["python3", "/usr/local/bin/reset_password.py"]
+CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
