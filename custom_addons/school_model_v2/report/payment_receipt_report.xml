@@ -1,0 +1,310 @@
+<odoo>
+
+<template id="receipt_template">
+<t t-call="web.external_layout">
+
+ <main class="page" >  
+
+<head>  
+                <style>                 
+                    @font-face {
+                        font-family: 'Cairo-Bold';
+                        src: url(/insurance_reports_custom/static/src/fonts/Cairo-VariableFont_slnt,wght.ttf);
+                    }
+                    body, table, div, span {
+                        font-family: 'Cairo-Bold' !important;
+                        direction: rtl;
+                    }
+                    td {
+                        text-align :right;
+                    }
+                    img{
+                        border: none !important;
+                        box-shadow: none !important;
+                        outlie: none !important;
+                    }  
+                </style> 
+            </head>
+<t t-call="web.html_container">
+
+<t t-foreach="docs" t-as="o">
+
+<t t-foreach="['نسخة الطالب','نسخة المدرسة']" t-as="copy">
+
+<div style=" 
+    padding:5px;
+    direction:rtl; 
+    border:1px solid black; 
+    border-radius:15px;
+">
+
+    <!-- Header -->
+
+    <div style="text-align:center;">
+
+        <h2 style="
+            margin:0;
+            font-weight:bold;
+        ">
+            مدارس المنهل الخاصة
+        </h2>
+
+        <div style="
+            font-size:16px;
+            margin:3px;
+        ">
+            بنين - بنات
+        </div>
+
+    </div>
+
+    <hr style="border:1px solid black;"/>
+
+
+
+    <div style=" 
+        justify-content:space-between;
+        margin-top:5px;
+    ">
+<table class="table-borderless" style="width:100%;  ">
+                <tr style="width:100%;">
+                    <td  width="50%" align="right"><h7>   التاريخ: <span t-field="o.payment_date"/></h7></td>
+                    <td  width="50%" style="text-align :left!important;"><h7 >إيصال استلام</h7></td>
+                 </tr>
+                 <tr style="width:100%;">
+                    <td  width="50%" align="right"><h7 style=" color:red;"><span t-field="o.receipt_number"/></h7></td>
+                    <td  width="50%" style="text-align :left!important;" >  <h7 ><span t-esc="copy"/></h7></td>
+                 </tr>
+        </table>
+                
+    <br/>
+<table class="table-borderless" style="width:100%;  ">
+                <tr style="width:100%;">
+                    <td  width="100%" align="right"> <h7>  استلمت من ولي أمر الطالب /</h7></td>
+                </tr>
+                <tr style="width:100%;">
+                    <td  width="100%" align="right"> <h7> <span t-field="o.student_id.name"/></h7></td>
+                </tr>
+        </table>
+            
+    <br/>
+<table class="table-borderless" style="width:100%;  ">
+                <tr style="width:100%;">
+                    <td  width="32%" align="right"><h7>  مبلغ وقدره :</h7></td>
+                    <td  width="68%" align="right" style="border:2px solid black; border-radius:9px; ">  <span t-field="o.amount"  t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/> </td>
+                 </tr>
+                <tr style="width:100%;">
+                    <td  width="32%" align="right"><h7>  المبلغ كتابة :</h7></td>
+                    <td  width="68%" align="right" style="border:2px solid black; border-radius:9px; ">  <span t-field="o.amount_text"  /> </td>
+                 </tr>
+                  <tr style="width:100%;">
+                    <td  width="32%" align="right"><h7>  وذلك عبارة عن :</h7></td>
+                    <td  width="68%" align="right" style="border:2px solid black; border-radius:9px; " >  <span t-field="o.payment_type.name"/> </td>
+                 </tr>
+        </table>
+            
+    <br/>     
+<table class="table-borderless" style="width:100%;  ">
+                 <tr style="width:100%;">
+                    <td  width="42%" align="right"><p style="font-size=8px!important;">إمضاء المستلم :</p></td>
+                    <td  width="8%" align="right" > <p style="font-size=8px!important;">...............</p> </td>
+                    <td  width="42%" align="right"><p style="font-size=8px!important;">إمضاء المسلم :</p></td>
+                    <td  width="8%" align="right" > <p style="font-size=8px!important;">...............</p> </td>
+                 </tr>
+        </table>
+    </div>
+ 
+ 
+<div style="text-align:left; padding:0;" > 
+    <img t-att-src="'/report/barcode/QR/%s'%('o.receipt_number')" style="width:70px;height:70px;"/>
+                    </div>
+      
+</div>
+
+</t>
+
+</t>
+
+</t>
+ </main>  
+</t>
+
+</template>
+<record id="paperformat_school_receipt" model="report.paperformat">
+    <field name="name">School Receipt</field>
+    <field name="default" eval="False"/>
+    <field name="format">custom</field>
+    <field name="page_width">220</field>
+    <field name="page_height">80</field>
+    <!-- <field name="margin_top">1</field>
+    <field name="margin_bottom">1</field>
+    <field name="margin_left">1</field>
+    <field name="margin_right">1</field>  -->
+</record>
+<record id="student_payment_receipt_report" model="ir.actions.report">
+    <field name="name">تقرير أقساط الطلاب</field>
+    <field name="model">payment</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">school_model_v2.receipt_template</field>
+    <field name="report_file">school_model_v2.receipt_template</field>
+    <field name="paperformat_id" ref="school_model_v2.paperformat_school_receipt"/>
+    <field name="binding_model_id" ref="school_model_v2.model_payment"/>
+    <field name="binding_type">report</field>
+</record>
+   
+
+<template id="receipt_template">
+<t t-call="web.minimal_layout"> <!-- اتغيرت هنا -->
+
+ <main class="page" style="margin:0; padding:0;">  
+
+<head>  
+    <style>                 
+        @font-face {
+            font-family: 'Cairo-Bold';
+            src: url(/insurance_reports_custom/static/src/fonts/Cairo-VariableFont_slnt,wght.ttf);
+        }
+        body, table, div, span {
+            font-family: 'Cairo-Bold' !important;
+            direction: rtl;
+        }
+        td {
+            text-align :right;
+        }
+        img{
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important; <!-- صححتها من outlie -->
+        }
+        /* يمنع تقطيع النسخة بين صفحتين */
+        .receipt-copy {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        /* يعمل فاصل بين النسختين بدون صفحة جديدة */
+        .receipt-copy.first {
+            page-break-after: avoid;
+            break-after: avoid;
+            margin-bottom: 0;
+        }
+    </style> 
+</head>
+
+<t t-foreach="docs" t-as="o">
+
+<t t-foreach="['نسخة الطالب','نسخة المدرسة']" t-as="copy">
+
+<div t-att-class="'receipt-copy ' + ('first' if copy_index == 0 else '')" 
+     style=" 
+        padding:5px;
+        direction:rtl; 
+        border:1px solid black; 
+        border-radius:15px;
+        height:75mm; 
+        box-sizing: border-box;
+        overflow: hidden;
+">
+
+    <!-- Header -->
+    <div style="text-align:center;">
+        <h2 style="margin:0; font-weight:bold; font-size:18px;">
+            مدارس المنهل الخاصة
+        </h2>
+        <div style="font-size:14px; margin:2px;">
+            بنين - بنات
+        </div>
+    </div>
+
+    <hr style="border:1px solid black; margin:3px 0;"/>
+
+    <div style="margin-top:3px;">
+        <table class="table-borderless" style="width:100%;">
+            <tr>
+                <td width="50%" align="right"><span>التاريخ: <span t-field="o.payment_date"/></span></td>
+                <td width="50%" style="text-align:left;"><span>إيصال استلام</span></td>
+            </tr>
+            <tr>
+                <td width="50%" align="right"><span style="color:red;"><span t-field="o.receipt_number"/></span></td>
+                <td width="50%" style="text-align:left;"><span><span t-esc="copy"/></span></td>
+            </tr>
+        </table>
+                
+        <table class="table-borderless" style="width:100%; margin-top:3px;">
+            <tr>
+                <td width="100%" align="right"><span>استلمت من ولي أمر الطالب /</span></td>
+            </tr>
+            <tr>
+                <td width="100%" align="right"><span t-field="o.student_id.name"></span></td>
+            </tr>
+        </table>
+            
+        <table class="table-borderless" style="width:100%; margin-top:3px;">
+            <tr>
+                <td width="32%" align="right"><span>مبلغ وقدره :</span></td>
+                <td width="68%" align="right" style="border:2px solid black; border-radius:9px; padding:2px;">  
+                    <span t-field="o.amount" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/> 
+                </td>
+            </tr>
+            <tr>
+                <td width="32%" align="right"><span>المبلغ كتابة :</span></td>
+                <td width="68%" align="right" style="border:2px solid black; border-radius:9px; padding:2px;">  
+                    <span t-field="o.amount_text"/> 
+                </td>
+            </tr>
+            <tr>
+                <td width="32%" align="right"><span>وذلك عبارة عن :</span></td>
+                <td width="68%" align="right" style="border:2px solid black; border-radius:9px; padding:2px;">  
+                    <span t-field="o.payment_type.name"/> 
+                </td>
+            </tr>
+        </table>
+            
+        <table class="table-borderless" style="width:100%; margin-top:5px;">
+            <tr>
+                <td width="42%" align="right"><span style="font-size:10px;">إمضاء المستلم :</span></td>
+                <td width="8%" align="right"><span style="font-size:10px;">...............</span></td>
+                <td width="42%" align="right"><span style="font-size:10px;">إمضاء المسلم :</span></td>
+                <td width="8%" align="right"><span style="font-size:10px;">...............</span></td>
+            </tr>
+        </table>
+    </div>
+ 
+    <div style="text-align:left; padding:0; position:absolute; bottom:5px; left:5px;"> 
+        <img t-att-src="'/report/barcode/QR/%s' % o.receipt_number" style="width:50px;height:50px;"/>
+    </div>
+      
+</div>
+  
+</t>
+
+</t>
+</main>  
+</t>
+
+</template>
+
+<record id="paperformat_school_receipt" model="report.paperformat">
+    <field name="name">School Receipt</field>
+    <field name="default" eval="False"/>
+    <field name="format">custom</field>
+    <field name="page_width">210</field>  <!-- خليتها A4 عرض -->
+    <field name="page_height">160</field> <!-- 160mm عشان تشيل نسختين -->
+    <field name="margin_top">5</field>
+    <field name="margin_bottom">5</field>
+    <field name="margin_left">5</field>
+    <field name="margin_right">5</field>
+    <field name="orientation">Portrait</field>
+</record>
+
+<record id="student_payment_receipt_report" model="ir.actions.report">
+    <field name="name">تقرير أقساط الطلاب</field>
+    <field name="model">payment</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">school_model_v2.receipt_template</field>
+    <field name="report_file">school_model_v2.receipt_template</field>
+    <field name="paperformat_id" ref="school_model_v2.paperformat_school_receipt"/>
+    <field name="binding_model_id" ref="school_model_v2.model_payment"/>
+    <field name="binding_type">report</field>
+</record>
+ 
+</odoo>

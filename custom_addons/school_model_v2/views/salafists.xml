@@ -1,0 +1,44 @@
+<odoo>
+    <!-- View for teachers -->
+    <record id="view_school_salafist_form" model="ir.ui.view">
+        <field name="name">school.salafist.form</field>
+        <field name="model">school.salafist</field>
+        <field name="arch" type="xml">
+            <form string="بيانات العامل">
+                <sheet>
+                    <group>  
+                        <field name="type_empol"/>
+                        <field name="salafist_id" invisible="type_empol !=  'teacher'"/>  
+                        <field name="salafists_admin_id" invisible="type_empol !=  'manager'"/> 
+                        <field name="date"/>
+                        <field name="amount"/>
+                        <field name="notes"/>
+                    </group>
+                     
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_salafist_tree" model="ir.ui.view">
+        <field name="name">school.salafist.tree</field>
+        <field name="model">school.salafist</field>
+        <field name="arch" type="xml">
+            <list string="list of salafist">
+                        <field name="type_empol"/> 
+                        <field name="date"/>
+                        <field name="amount"/>
+                        <field name="notes"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Menu for teachers -->
+       <record id="action_school_salafist" model="ir.actions.act_window">
+        <field name="name">school salafist</field>
+        <field name="res_model">school.salafist</field>
+                
+    </record>  
+    <menuitem id="menu_school_salafist" name="salafist" action="action_school_salafist" parent="center_view_root_menu"/>
+ 
+</odoo>

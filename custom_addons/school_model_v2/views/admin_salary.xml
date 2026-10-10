@@ -1,0 +1,43 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_school_expense_admin_statistics" model="ir.actions.act_window">
+        <field name="name">admin salary Statistics</field>
+        <field name="res_model">school.expense</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <!-- فلترة مبدئية على القسط الأول --> 
+        <field name="domain">[('category','=','admin')]</field>
+
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_school_expense_admin_statistics" 
+              name="admin salary Statistics"
+              parent="expenses_statistics"
+              action="action_school_expense_admin_statistics"
+               />
+
+    <!-- Pivot View -->
+    <record id="view_school_expense_admin_pivot" model="ir.ui.view">
+        <field name="name">daily.expenditures.pivot</field>
+        <field name="model">school.expense</field>
+        <field name="arch" type="xml">
+            <pivot string="admin salary Statistics">
+                <field name="amount" type="measure"/>   
+                <field name="worker_id" type="row" string="admin name"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_school_expense_admin_graph" model="ir.ui.view">
+        <field name="name">payment.daily.expenditures.graph</field>
+        <field name="model">school.expense</field>
+        <field name="arch" type="xml">
+            <graph string="admin salary Graph" type="bar">
+                <field name="amount" type="measure"/>   
+                <field name="worker_id" type="row" string="admin name"/>
+                
+            </graph>
+        </field>
+    </record>
+</odoo>

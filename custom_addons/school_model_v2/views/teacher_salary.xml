@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_employee_salary_statistics" model="ir.actions.act_window">
+        <field name="name">employee salary Statistics</field>
+        <field name="res_model">school.employee</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <!-- فلترة مبدئية على القسط الأول --> 
+    </record> 
+    <!-- Menu Item --> 
+
+    <!-- Pivot View -->
+    <record id="view_employee_salary_pivot" model="ir.ui.view">
+        <field name="name">daily.expenditures.pivot</field>
+        <field name="model">school.employee</field>
+        <field name="arch" type="xml">
+            <pivot string="employee salary Statistics">
+                <field name="salary" type="measure"/>   
+                <field name="name" type="row" string="employee name"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_employee_salary_graph" model="ir.ui.view">
+        <field name="name">payment.daily.expenditures.graph</field>
+        <field name="model">school.employee</field>
+        <field name="arch" type="xml">
+            <graph string="employee salary Graph" type="bar">
+                <field name="salary" type="measure"/>   
+                <field name="name" type="row" string="employee name"/>
+                
+            </graph>
+        </field>
+    </record>
+</odoo>

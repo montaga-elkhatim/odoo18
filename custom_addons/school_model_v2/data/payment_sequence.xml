@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="seq_student_payment" model="ir.sequence">
+        <field name="name">Student Payment</field>
+        <field name="code">payment_sequence</field>
+        <field name="prefix"></field>
+        <field name="padding">6</field> 
+    </record>
+</data>
+
+</odoo>

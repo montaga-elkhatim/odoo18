@@ -1,0 +1,67 @@
+<odoo>
+
+    <record id="payment_view_form" model="ir.ui.view">
+        <field name="name">payment.view.form</field>
+        <field name="model">payment</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>      
+                    <group > 
+                        <group string="بيانات الدفعية"> 
+                            <field name="payment_date" string="تاريخ الدفع"/> 
+                            <field name="student_id" string="إسم الطالب"/> 
+                            <field name="payment_type"  string=" نوع القسط المدفوع"/> 
+                            <field name="receipt_number"  string="رقم الدفعية المتسلسل"/> 
+                            <field name="amount" string="المبلغ المدفوع"/>  
+                            <field name="amount_text" string="المبلغ المدفوع نصا"/> 
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_view_tree" model="ir.ui.view">
+        <field name="name">payment.view.tree</field>
+        <field name="model">payment</field>
+        <field name="arch" type="xml">
+            <list > 
+                            <field name="payment_date" string="تاريخ الدفع"/> 
+                            <field name="student_id" string="إسم الطالب"/> 
+                            <field name="payment_type"  string=" نوع القسط المدفوع"/> 
+                            <field name="receipt_number"  string="رقم الدفعية المتسلسل"/> 
+                            <field name="amount" string="المبلغ المدفوع"/>    
+            </list>
+        </field>
+    </record>
+
+    <record id="payment_view_search" model="ir.ui.view">
+        <field name="name">payment.view.search</field>
+        <field name="model">payment</field>
+        <field name="arch" type="xml">
+            <search __validate__="1"> 
+             </search>
+        </field>
+    </record>
+
+    <record id="payment_action" model="ir.actions.act_window">
+        <field name="name">Payment</field>
+        <field name="res_model">payment</field>
+        <field name="context">{
+            'create':False
+        }</field>
+        <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No payment to show
+                </p><p>
+                    Create some payment to see their info in this view.
+                </p>
+        </field>         
+    </record> 
+    <menuitem id="menu_payment_action" 
+              name="طباعة إيصالات " 
+              web_icon="school_model_v2,static/description/20623635981715247275-512.png"
+              action="payment_action"
+               />
+ 
+</odoo>

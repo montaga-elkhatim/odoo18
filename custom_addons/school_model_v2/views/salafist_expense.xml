@@ -1,0 +1,43 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_salafist_statistics" model="ir.actions.act_window">
+        <field name="name">salafist Statistics</field>
+        <field name="res_model">school.salafist</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <!-- فلترة مبدئية على القسط الأول -->  
+
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_salafist_statistics" 
+              name="salafist Statistics" 
+              parent="expenses_statistics"
+              action="action_salafist_statistics"
+               />
+
+    <!-- Pivot View -->
+    <record id="view_salafist_pivot" model="ir.ui.view">
+        <field name="name">daily.expenditures.pivot</field>
+        <field name="model">school.salafist</field>
+        <field name="arch" type="xml">
+            <pivot string="salafist Statistics">
+                <field name="amount" type="measure"/>   
+                <field name="type_empol" type="row" string="type of empol"/>  
+                <field name="salafist_id" type="row" string="name"/>  
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_salafist_graph" model="ir.ui.view">
+        <field name="name">payment.daily.expenditures.graph</field>
+        <field name="model">school.salafist</field>
+        <field name="arch" type="xml">
+            <graph string="salafist Graph" type="bar">
+                <field name="amount" type="measure"/>   
+                <field name="type_empol" type="row" string="type of empol"/>  
+                <field name="salafist_id" type="row" string="name"/>  
+            </graph>
+        </field>
+    </record>
+</odoo>

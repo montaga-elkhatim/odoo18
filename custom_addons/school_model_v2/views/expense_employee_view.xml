@@ -1,0 +1,157 @@
+<odoo>
+    <record id="view_school_expense_employee_form" model="ir.ui.view">
+    <field name="name">school.expense.form</field>
+    <field name="model">school.expense</field>
+
+    <field name="arch" type="xml">
+
+        <form string="منصرفات المدرسة">
+
+            <sheet>
+
+                <!-- Header -->
+
+                <div class="oe_title">
+                    <!-- <h1>
+                        <field name="category"
+                               placeholder="نوع المنصرف"/>
+                    </h1> -->
+                     
+                        <label for="category_expense"></label> <field name="category_expense"
+                               placeholder="نوع المنصرف"/>
+                    
+                </div>
+
+                <!-- Main Groups -->
+
+                <group invisible="category_expense == '2'">
+
+                    <group string="بيانات الصرف">
+                    
+
+                        <field name="date"/>
+
+                        <field name="employee_id"/>
+
+                        <field name="amount"/>
+                        <field name="lec_number" />
+
+                        <!-- <field name="owner"/> -->
+
+                    </group>
+
+                    <group string="التفاصيل">
+
+                        <field name="purpose"/>
+
+                        <field name="notes" />
+
+                    </group>
+
+                </group>
+
+                <!-- Exam Details -->
+
+                <group string="تفاصيل الإمتحان" invisible="category_expense != '2'"
+                  >
+
+                    <group invisible="category_expense != '2'">
+
+                        <field name="exam_type" />
+
+                        <field name="exam_expense_type"/>
+
+                        <field name="subject_id"/>
+ 
+
+                    </group>
+
+                    <group>
+
+                        <field name="papers_number"/>
+
+                        <field name="control_number"/>
+
+                        <field name="amount"/>
+
+
+                    </group>
+
+                </group>
+
+            </sheet>
+
+        </form>
+
+    </field>
+</record>
+  <record id="view_school_expense_employee_tree" model="ir.ui.view">
+
+    <field name="name">school.expense.tree</field>
+
+    <field name="model">school.expense</field>
+
+    <field name="arch" type="xml">
+
+        <list string="منصرفات المدرسة"
+              decoration-danger="amount &gt; 100000">
+
+            <field name="date"/>
+
+            <!-- <field name="category_expense"/> -->
+
+            <field name="employee_id"/>
+            <field name="lec_number" />
+
+            <!-- <field name="owner"/> -->
+
+            <field name="amount" sum="إجمالي المصروفات"/>
+
+        </list>
+
+    </field>
+
+</record>
+<record id="view_school_expense_employee_pivot" model="ir.ui.view">
+        <field name="name">school.expense.pivot</field>
+        <field name="model">school.expense</field>
+        <field name="arch" type="xml">
+            <pivot string="إحصائيات مصرفات المدرسة">
+                <field name="amount" type="measure"/> 
+                <field name="category_expense" type="row" string="تصنيف الصرف"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="action_school_expense_employee" model="ir.actions.act_window">
+        <field name="name">school expense</field>
+        <field name="res_model">school.expense</field>
+        <field name="domain">[('category_expense', '=', '1')]</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_school_expense_employee_tree"/>
+
+        <field name="context">{
+            'default_category_expense':'1'
+        }</field>
+                
+    </record><record id="action_school_expense_employee_pivot" model="ir.actions.act_window">
+        <field name="name">school expense</field>
+        <field name="res_model">school.expense</field>
+        <field name="view_mode">pivot</field>
+        <field name="domain">[('category_expense', '=', '1')]</field>
+
+
+                
+    </record>  
+     <menuitem id="menu_school_expense_employee" name="مصروفات الموظفين" sequence="1" action="action_school_expense_employee"  parent="menu_schools_employee"    
+    />
+     <menuitem id="menu_school_expense_employee_pivot" name="إحصائيات المصروفات الموظفين" sequence="2" action="action_school_expense_employee_pivot" parent="menu_schools_employee"/>
+   
+    <!-- <menuitem id="menu_school_expense_employee" name="2مصروفات الموظفين" action="action_school_expense_employee"  
+    
+        web_icon="school_model,static/description/762986001667324349-512.png"
+    />
+     <menuitem id="menu_school_expense_employee_pivot" name="إحصائيات المصروفات الموظفين" action="action_school_expense_employee_pivot" sequence="5" parent="menu_school_expense_employee"/>
+    -->
+ 
+                
+</odoo> 

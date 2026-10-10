@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_payment,access_payment,model_payment,,1,1,1,1
+access_student,access_student,model_student,,1,1,1,1
+access_school_expense,access_school_expense,model_school_expense,,1,1,1,1
+access_school_salafist,access_school_salafist,model_school_salafist,,1,1,1,1
+access_school_subject,access_school_subject,model_school_subject,,1,1,1,1
+access_school_class,access_school_class,model_school_class,,1,1,1,1
+access_school_category_expense,access_school_category_expense,model_school_category_expense,,1,1,1,1
+access_school_exam,access_school_exam,model_school_exam,,1,1,1,1
+access_school_exam_type,access_school_exam_type,model_school_exam_type,,1,1,1,1
+access_school_installment,access_school_installment,model_school_installment,,1,1,1,1
+access_school_academic_year,access_school_academic_year,model_school_academic_year,,1,1,1,1
+access_school_state,access_school_state,model_school_state,,1,1,1,1
+access_school_employee,model_school_employee,model_school_employee,,1,1,1,1
+access_school_amount,model_school_amount,model_school_amount,,1,1,1,1
+access_school_financial_report_wizard,model_school_financial_report_wizard,model_school_financial_report_wizard,,1,1,1,1

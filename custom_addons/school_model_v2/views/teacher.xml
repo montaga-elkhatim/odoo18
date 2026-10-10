@@ -1,0 +1,67 @@
+<odoo>
+    <!-- View for teachers -->
+    <record id="view_school_teacher_form" model="ir.ui.view">
+        <field name="name">school.teacher.form</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <form string="بيانات العامل">
+                <sheet>
+                    <group> salafists_ids
+                        <field name="name"/> 
+                        <field name="subject_name"/>
+                        <field name="lec_number"/>
+                        <field name="salary"/>
+                        <field name="active"/>
+                    </group> 
+                    <notebook>
+                        <page string="salarys">
+                            <field name="expense_ids">
+                                <list> 
+                                    <field name="category"/>
+                                    <field name="amount"/>
+                                    <field name="date"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="salafists">
+                            <field name="salafists_ids">
+                                <list> 
+                                    <field name="date"/>
+                                    <field name="amount"/>
+                                    <field name="notes"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_teacher_tree" model="ir.ui.view">
+        <field name="name">school.teacher.tree</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <list string="قائمة العمال">
+                <field name="name"/>
+                <field name="subject_name"/> 
+                <field name="lec_number"/>
+                <field name="salary"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Menu for teachers -->
+       <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">school teacher</field>
+        <field name="res_model">school.teacher</field>
+                
+    </record>  
+    <!-- <menuitem id="menu_school_teacher" name="teacher" action="action_school_teacher" sequence="3" parent="center_view_root_menu"/> -->
+    <menuitem id="menu_school_teacher" name="الأساتذة" action="action_school_teacher" 
+        web_icon="school_model_v2,static/description/303281881582967221-512.png"
+    
+    />
+ 
+</odoo>

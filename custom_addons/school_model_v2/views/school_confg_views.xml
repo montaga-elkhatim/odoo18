@@ -1,0 +1,308 @@
+<odoo>
+<menuitem
+        id="confg_view_root_menu"
+        name="الإعدادات" 
+        parent="center_view_root_menu"
+   /> 
+<!-- school_subject_views -->
+        <record id="view_school_subject_form" model="ir.ui.view">
+            <field name="name">school.subject.form</field>
+            <field name="model">school.subject</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="class_ids" widget="many2many_tags" />    
+                            <field name="code"  />    
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_subject_tree" model="ir.ui.view">
+            <field name="name">school.subject.tree</field>
+            <field name="model">school.subject</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />  
+                            <field name="class_ids"  />  
+                </list>
+            </field>
+        </record>
+        <record id="action_school_subject" model="ir.actions.act_window">
+            <field name="name">المواد الدراسية</field>
+            <field name="res_model">school.subject</field>
+                    
+        </record>  
+        <menuitem id="menu_school_subject" name="المواد الدراسية" action="action_school_subject" parent="confg_view_root_menu"/>
+ 
+<!-- school_class_views -->
+        <record id="view_school_class_form" model="ir.ui.view">
+            <field name="name">school.class.form</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />  
+                            <field name="category"  />  
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_subject_tree" model="ir.ui.view">
+            <field name="name">school.class.tree</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />  
+                            <field name="category"  />  
+                </list>
+            </field>
+        </record>
+        <record id="action_school_class" model="ir.actions.act_window">
+            <field name="name">الصفوف المدرسية</field>
+            <field name="res_model">school.class</field>
+                    
+        </record>  
+        <menuitem id="menu_school_class" name="الصفوف الدراسية" action="action_school_class" parent="confg_view_root_menu"/>
+ 
+
+<!-- school_category_expense_views -->
+        <record id="view_category_expense_form" model="ir.ui.view">
+            <field name="name">school.category.expense.form</field>
+            <field name="model">school.category.expense</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />   
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.category.expense.tree</field>
+            <field name="model">school.category.expense</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />   
+                </list>
+            </field>
+        </record>
+        <record id="action_category_expense" model="ir.actions.act_window">
+            <field name="name">school class</field>
+            <field name="res_model">school.category.expense</field>
+                    
+        </record>  
+        <!-- <menuitem id="menu_category_expense" name="Category Expense" action="action_category_expense" parent="confg_view_root_menu"/> -->
+ 
+<!-- school_exam_views -->
+        <record id="view_exam_form" model="ir.ui.view">
+            <field name="name">school.exam.form</field>
+            <field name="model">school.exam</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />   
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.exam.tree</field>
+            <field name="model">school.exam</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />   
+                </list>
+            </field>
+        </record>
+        <record id="action_exam" model="ir.actions.act_window">
+            <field name="name">إمتحانات المدرسة</field>
+            <field name="res_model">school.exam</field>
+                    
+        </record>  
+        <menuitem id="menu_exam" name="الإمتحانات" action="action_exam" parent="confg_view_root_menu"/>
+<!-- school_exam_type_views -->
+        <record id="view_exam_type_form" model="ir.ui.view">
+            <field name="name">school.exam.type.form</field>
+            <field name="model">school.exam.type</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />  
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.exam.type.tree</field>
+            <field name="model">school.exam.type</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />  
+                </list>
+            </field>
+        </record>
+        <record id="action_exam_type" model="ir.actions.act_window">
+            <field name="name">انواع صرف الامتحانات</field>
+            <field name="res_model">school.exam.type</field>
+                    
+        </record>  
+        <menuitem id="menu_exam_type" name="انواع صرف الامتحانات" action="action_exam_type" parent="confg_view_root_menu"/>
+ 
+<!-- school_installment_views -->
+        <record id="view_installment_form" model="ir.ui.view">
+            <field name="name">school.installment.form</field>
+            <field name="model">school.installment</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />  
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.installment.tree</field>
+            <field name="model">school.installment</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />  
+                </list>
+            </field>
+        </record>
+        <record id="action_installment" model="ir.actions.act_window">
+            <field name="name">school installment</field>
+            <field name="res_model">school.installment</field>
+                    
+        </record>  
+        <menuitem id="menu_installment" name="الأقساط الدراسية" action="action_installment" parent="confg_view_root_menu"/>
+ 
+<!-- school_academic_year_views -->
+        <record id="view_academic_year_form" model="ir.ui.view">
+            <field name="name">school.academic.year.form</field>
+            <field name="model">school.academic.year</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />  
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.academic.year.tree</field>
+            <field name="model">school.academic.year</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />  
+                </list>
+            </field>
+        </record>
+        <record id="action_academic_year" model="ir.actions.act_window">
+            <field name="name">school academic year</field>
+            <field name="res_model">school.academic.year</field>
+                    
+        </record>  
+        <menuitem id="menu_academic_year" name="السنوات الدراسية" action="action_academic_year" parent="confg_view_root_menu"/>
+<!-- school_state_views -->
+        <record id="view_state_form" model="ir.ui.view">
+            <field name="name">school.state.form</field>
+            <field name="model">school.state</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="name"/>
+                            <field name="code"  />   
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.state.tree</field>
+            <field name="model">school.state</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="name"/>
+                            <field name="code"  />   
+                </list>
+            </field>
+        </record>
+        <record id="action_state" model="ir.actions.act_window">
+            <field name="name">school state</field>
+            <field name="res_model">school.state</field>
+                    
+        </record>  
+        <menuitem id="menu_state" name="الولايات" action="action_state" parent="confg_view_root_menu"/>
+    <record id="view_amount_form" model="ir.ui.view">
+            <field name="name">school.amount.form</field>
+            <field name="model">school.amount</field>
+            <field name="arch" type="xml">
+                <form  >
+                    <sheet>
+                        <group>     
+                            <field name="active"/>
+                            <field name="secondary_amount"  />   
+                            <field name="middle_amount"  />  
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_school_salafist_tree" model="ir.ui.view">
+            <field name="name">school.amount.tree</field>
+            <field name="model">school.amount</field>
+            <field name="arch" type="xml">
+                <list  >
+                            <field name="active"/>
+                            <field name="secondary_amount"  />   
+                            <field name="middle_amount"  />   
+                </list>
+            </field>
+        </record>
+        <record id="action_amount" model="ir.actions.act_window">
+            <field name="name">school amount</field>
+            <field name="res_model">school.amount</field>
+                    
+        </record>  
+        <menuitem id="menu_amount" name="الرسوم الدراسية" action="action_amount" parent="confg_view_root_menu"/>
+  
+
+</odoo>

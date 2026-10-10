@@ -1,0 +1,153 @@
+<odoo>
+    <record id="view_school_expense_form" model="ir.ui.view">
+    <field name="name">school.expense.form</field>
+    <field name="model">school.expense</field>
+
+    <field name="arch" type="xml">
+
+        <form string="منصرفات المدرسة">
+
+            <sheet>
+
+                <!-- Header -->
+
+                <div class="oe_title">
+                    <!-- <h1>
+                        <field name="category"
+                               placeholder="نوع المنصرف"/>
+                    </h1> -->
+                     
+                        <label for="category_expense"></label> <field name="category_expense"
+                               placeholder="نوع المنصرف"/>
+                    
+                </div>
+
+                <!-- Main Groups -->
+
+                <group invisible="category_expense == '2'">
+
+                    <group string="بيانات الصرف">
+                    
+
+                        <field name="date" />
+
+                        <field name="employee_id" invisible="category_expense != '1'"/>
+                        <field name="lec_number" invisible="category_expense != '1'"/>
+
+                       
+
+                        <!-- <field name="owner"/> -->
+
+                    </group>
+
+                    <group string="التفاصيل">
+
+                      
+
+                        <field name="notes" required="category_expense != '1'"/>
+                        <field name="amount"/>
+
+
+                    </group>
+
+                </group>
+
+                <!-- Exam Details -->
+
+                <group string="تفاصيل الإمتحان" invisible="category_expense != '2'">
+
+                    <group invisible="category_expense != '2'">
+
+                        <field name="exam_type" />
+
+                        <field name="exam_expense_type"/>
+
+                        <field name="subject_id"/>
+ 
+
+                    </group>
+
+                    <group>
+
+                        <field name="papers_number"/>
+
+                        <field name="control_number"/>
+                        
+                        <field name="notes"/> 
+
+                        <field name="amount"/>
+
+
+                    </group>
+
+                </group>
+
+            </sheet>
+
+        </form>
+
+    </field>
+</record>
+  <record id="view_school_expense_tree" model="ir.ui.view">
+
+    <field name="name">school.expense.tree</field>
+
+    <field name="model">school.expense</field>
+
+    <field name="arch" type="xml">
+
+        <list string="منصرفات المدرسة"
+              decoration-danger="amount &gt; 100000">
+
+            <field name="date"/>
+
+            <field name="category_expense"/>
+            <!-- <field name="lec_number"/> -->
+            
+
+            <!-- <field name="employee_id"/> -->
+
+            <!-- <field name="owner"/> -->
+
+            <field name="amount" sum="إجمالي المصروفات"/>
+
+        </list>
+
+    </field>
+
+</record>
+<record id="view_school_expense_pivot" model="ir.ui.view">
+        <field name="name">school.expense.pivot</field>
+        <field name="model">school.expense</field>
+        <field name="arch" type="xml">
+            <pivot string="إحصائيات مصرفات المدرسة">
+                <field name="amount" type="measure"/> 
+                <field name="category_expense" type="row" string="تصنيف الصرف"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="action_school_expense" model="ir.actions.act_window">
+        <field name="name">school expense</field>
+        <field name="res_model">school.expense</field>
+        <field name="domain">[('category_expense', '!=', '1')]</field>
+
+                
+    </record><record id="action_school_expense2" model="ir.actions.act_window">
+        <field name="name">school expense</field>
+        <field name="res_model">school.expense</field>
+        <field name="view_mode">pivot</field>
+        <field name="domain">[('category_expense', '!=', '1')]</field>
+
+
+                
+    </record>  
+    <menuitem id="menu_school_expense" name="منصرفات المدرسة" action="action_school_expense"  
+    
+        web_icon="school_model_v2,static/description/762986001667324349-512.png"
+    />
+     <menuitem id="menu_school_expense2" name="إحصائيات المنصرفات" action="action_school_expense2" sequence="5" parent="menu_school_expense"/>
+    <menuitem id="menu_action_school_financial_report_wizard" name="تقرير إحصائيات  " action="action_school_financial_report_wizard"   parent="menu_school_expense"/>
+   
+ 
+                
+</odoo> 

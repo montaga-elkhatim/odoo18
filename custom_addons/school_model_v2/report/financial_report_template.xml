@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_school_financial_template">
+  <style> 
+        @font-face {
+                    font-family: 'Amiri';
+                    src: url(/school_model_v2/static/src/fonts/Amiri-Bold.ttf);
+                }
+            
+        @font-face {
+            font-family: 'Cairo-Bold';
+            src: url(/school_model_v2/static/src/fonts/Cairo-VariableFont_slnt,wght.ttf);
+        }
+        body, table, div, span {
+                font-family: 'Cairo-Bold' !important;
+        } 
+        th {
+            background-color:rgb(113, 197, 154)!important;
+            font-weight: bold;
+            text-align:right;
+        }
+        td, th {
+            padding: 4px !important;
+            vertical-align: middle;
+            text-align:right;
+
+        }
+    </style>
+ 
+    <t t-call="web.html_container">
+
+        <t t-foreach="docs" t-as="o">
+
+            <t t-call="web.external_layout">
+
+                <div class="page" style=" direction: rtl;  font-size:18px; font-family: Cairo-Bold;">
+ 
+                    <h2 style="text-align:center;"> التقرير المالي</h2>
+                    <br/>
+
+                    <strong>من تاريخ:</strong>
+                    <span t-field="o.date_from"/>
+
+                    <br/>
+
+                    <strong>الي تاريخ:</strong>
+                    <span t-field="o.date_to"/>
+
+                    <br/>
+                    <br/>
+
+                    <t t-set="data"
+                       t-value="o.get_report_data()"/>
+
+                    <!-- Summary -->
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <td>
+                                اجمالي اقساط الطلاب المدفوعة
+                            </td>
+
+                            <td>
+                                <span t-esc="data['total_income']" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                منصرفات الاساتذة
+                            </td>
+
+                            <td>
+                                <span t-esc="data['total_teacher_expense']" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                منصرفات المدرسة
+                            </td>
+
+                            <td>
+                                <span t-esc="data['total_school_expense']" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                الصافي اوالمتبقي  
+                            </td>
+
+                            <td>
+                                <span t-esc="data['net']" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <br/>
+                    <br/>
+
+                    <!-- Student Payments -->
+
+                    <h4>
+                        اقساط الطلاب المدفوعة
+                    </h4>
+
+                    <table class="table table-bordered">
+
+                        <thead style="text-align:right !important;">
+
+                            <tr style="background-color:rgb(113, 197, 154)!important;">
+                                <td>الطالب</td>
+                                <td>التاريخ</td>
+                                <td>المبلغ</td>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr t-foreach="data['student_payments']"
+                                t-as="payment">
+
+                                <td>
+                                    <span t-field="payment.student_id"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="payment.payment_date"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="payment.amount" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <br/>
+
+                    <!-- Teacher Expenses -->
+
+                    <h4>
+                        منصرفات الأساتذة
+                    </h4>
+
+                    <table class="table table-bordered">
+
+                        <thead style="text-align:right !important;">
+
+                            <tr style="background-color:rgb(113, 197, 154)!important;">
+                                <td>إسم الأستاذ</td>
+                                <td>التاريخ</td>
+                                <td>المبلغ</td>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr t-foreach="data['teacher_expenses']"
+                                t-as="expense">
+
+                                <td>
+                                    <span t-field="expense.employee_id"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="expense.date"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="expense.amount" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <br/>
+
+                    <!-- School Expenses -->
+
+                    <h4>
+                        منصرفات المدرسة
+                    </h4>
+
+                    <table class="table table-bordered">
+
+                        <thead style="text-align:right !important;">
+
+                            <tr style="background-color:rgb(113, 197, 154)!important;">
+                                <td>نوع المنصرف</td>
+                                <td>التاريخ</td>
+                                <td>المبلغ</td>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr t-foreach="data['school_expenses']"
+                                t-as="expense">
+
+                                <td>
+                                    <span t-field="expense.category_expense"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="expense.date"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="expense.amount" t-options="{'widget':'monetary','display_currency':env.company.currency_id}"/>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </t>
+
+        </t>
+
+    </t>
+
+</template>
+
+</odoo>

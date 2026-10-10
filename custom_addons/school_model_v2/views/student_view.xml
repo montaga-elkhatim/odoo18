@@ -1,0 +1,187 @@
+<odoo>
+
+
+    <record id="student_view_form" model="ir.ui.view">
+        <field name="name">student.view.form</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>  
+                     
+                    
+                    <field name="image" widget="image" class="oe_avatar" />      
+                    <group >
+                        <group string=" معلومات الطالب" > 
+                            <field name="name" style="font-family='title';" />
+                            <field name="partner_id"  />
+                            <field name="registration_date" widget="date"   />
+                            <field name="birth_date" widget="date" /> 
+                            <field name="academic_year" />  
+                            <field name="state" />
+                            <field name="locality"  />
+                            <field name="grade" />  
+                            <field name="level"  />
+                            <field name="section" invisible="level != '1'"/> 
+                            <field name="class_section"  />
+                            <field name="primary_total" invisible="level != '1'"  />
+                            <field name="percentage"  invisible="level != '1'" />
+                            <field name="health_status" />   
+                            <field name="address"   />
+
+                        </group>
+                        <group string="معلومات ولي الأمر">
+                            <field name="father_name" />   
+                            <field name="father_phone" placeholder="e.g. 091234567"/> 
+                            <field name="another_father_phone" placeholder="e.g. 091234567"/>  
+                            <field name="discount_type" />  
+                            <field name="discount_value" widget="monetary"/>
+                            <field name="total_fees" widget="monetary"/>   
+                            <field name="total_paid" widget="monetary"/>    
+                            <field name="remaining_fees" widget="monetary"/>
+                            <field name="note" />     
+                                                  
+
+                        </group> 
+
+                        
+                    </group>
+                                   <notebook>
+    <page string="الأقساط">
+    <field name="payment_ids">
+        <list>
+               
+            <field name="student_id" />
+            <field name="payment_date"/> 
+            <field name="payment_type"/>  
+            <field name="amount"/>
+
+            <button name="action_print_receipt"
+                    type="object"
+                    string="Print Receipt"
+                    icon="fa-print"
+                    class="btn-primary"/>
+
+        </list>
+    </field>
+</page>
+</notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_view_tree" model="ir.ui.view">
+        <field name="name">student.view.tree</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <list >
+                <field name="name" />
+                <field name="level"  />
+                <field name="grade" />
+                <field name="class_section" /> 
+                <field name="total_paid" />    
+                <field name="remaining_fees" />
+                <field name="total_fees" />   
+            </list>
+        </field>
+    </record>
+
+        <record id="student_search_view" model="ir.ui.view">
+            <field name="name">student.search.view</field>
+            <field name="model">student</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/> 
+                    <group string="Group By">
+                        <!-- <filter name="policy_holder_id" string="Policy Holder"
+                                context="{'group_by': 'policy_holder_id'}"/>
+                        <filter name="insurance_category_id" string="Policy Category"
+                                context="{'group_by': 'insurance_category_id'}"/>
+                        <filter name="insurance_sub_category_id" string="Sub Category"
+                                context="{'group_by': 'insurance_sub_category_id'}"/>
+                        <filter name="insurance_policy_id" string="Insurance Policy"
+                                context="{'group_by': 'insurance_policy_id'}"/>
+                        <filter name="policy_price_list_id" string="Policy Terms"
+                                context="{'group_by': 'policy_price_list_id'}"/>
+                        <filter name="premium_type" string="Premium Type"
+                                context="{'group_by': 'premium_type'}"/>
+                        <filter name="policy_holder_gender" string="Gender"
+                                context="{'group_by': 'policy_holder_gender'}"/>
+                        <filter name="agent_id" string="Agents"
+                                context="{'group_by': 'agent_id'}"/>
+                        <filter name="issue_date" string="Issue Date"
+                                context="{'group_by': 'issue_date'}"/>
+                        <filter name="expiry_date" string="Expiry Date"
+                                context="{'group_by': 'expiry_date'}"/> -->
+
+                        <filter name="installment1_paid" string="القسط الاول غير المدفوع"
+                                domain="[('installment1_paid', '=', 0),('remaining_fees', '>', 0)]"/>
+                        <filter name="installment2_paid" string="القسط الثاني غير المدفوع"
+                                domain="[('installment2_paid', '=', 0),('remaining_fees', '>', 0)]"/>
+                        <filter name="installment3_paid" string="القسط الثالث غير المدفوع"
+                                domain="[('installment3_paid', '=', 0),('remaining_fees', '>', 0)]"/>
+                        <filter name="installment4_paid" string="القسط الرابع غير المدفوع"
+                                domain="[('installment4_paid', '=', 0),('remaining_fees', '>', 0)]"/>
+                        <filter name="installment5_paid" string="القسط الخامس غير المدفوع"
+                                domain="[('installment5_paid', '=', 0),('remaining_fees', '>', 0)]"/>
+                        <!-- <filter name="state_confirmed" string="Confirmed"
+                                domain="[('state', '=', 'confirmed')]"/>
+                        <filter name="state_running" string="Running"
+                                domain="[('state', '=', 'running')]"/>
+                        <filter name="state_expired" string="Expired"
+                                domain="[('state', '=', 'expired')]"/>
+                        <filter name="state_cancel" string="Cancelled"
+                                domain="[('state', '=', 'cancel')]"/> -->
+                    </group>
+                </search>
+            </field>
+        </record>
+    <record id="student_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">student</field>
+        <field name="view_mode">list,form,pivot</field>
+
+        <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No student to show
+                </p><p>
+                    Create some student to see their info in this view.
+                </p>
+        </field>         
+    </record>
+    
+<record id="view_fees_statistics_pivot" model="ir.ui.view">
+        <field name="name">student.fees.pivot</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <pivot string="Fees Statistics"> 
+                <field name="total_fees" type="measure"/>
+                <field name="installment1_paid" type="measure"/> 
+                <field name="installment2_paid" type="measure"/> 
+                <field name="installment3_paid" type="measure"/> 
+                <field name="installment4_paid" type="measure"/> 
+                <field name="installment5_paid" type="measure"/> 
+                <field name="total_paid" type="measure"/>
+                <field name="remaining_fees" type="measure"/>
+                <field name="grade" type="row"/>
+                <field name="class_section" type="row"/>
+            </pivot>
+        </field>
+    </record>
+ 
+    <record id="student_static_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">student</field>
+        <field name="view_mode">pivot</field>
+         
+    </record> 
+ 
+    <menuitem id="student_items_menu" name="الطلاب"    
+        web_icon="school_model_v2,static/description/14565869901582967219-512.png"
+       />
+    <menuitem id="students_items_menu" name="الطلاب" action="student_action" parent="student_items_menu"   />
+    <menuitem id="students_static_items_menu" name="إحصائيات اقساط الطلاب" action="student_static_action" parent="student_items_menu"   />
+  
+
+</odoo>

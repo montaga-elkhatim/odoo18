@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="school_financial_report_action"  model="ir.actions.report">
+
+        <field name="name">school financial report</field>
+        <field name="model">school.financial.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_model_v2.report_school_financial_template</field>
+        <field name="report_file">school_model_v2.report_school_financial_template</field>
+        <field name="print_report_name">'التقرير المالي'</field>
+
+    </record>
+
+</odoo>

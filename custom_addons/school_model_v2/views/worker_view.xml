@@ -1,0 +1,151 @@
+<odoo>
+    <!-- View for Workers -->
+    <record id="view_school_employee_form" model="ir.ui.view">
+        <field name="name">school.employee.form</field>
+        <field name="model">school.employee</field>
+        <field name="arch" type="xml">
+            <form string="الموظفين والعمال">
+            
+                <sheet>
+                
+                    <field name="image" widget="image" class="oe_avatar" />  
+                    <group> 
+                        <field name="name"/>
+                        <!-- <field name="category" /> -->
+                        <field name="subject_ids" widget="many2many_tags" />
+                        <field name="lec_number"/>
+                        <field name="salary"/>
+                        <field name="active"/>
+                    </group>
+                    <notebook>
+
+    <!-- Salaries -->
+    <button name="action_add_salary"
+        type="object"
+        string="إضافة مرتب"
+        class="oe_highlight"
+        icon="fa-money"/>
+
+    <page string="المرتبات" readonly="1">
+    <button name="action_add_salary"
+        type="object"
+        string="إضافة مرتب"
+        class="oe_highlight"
+        icon="fa-money"/>
+
+        <field name="expense_ids"
+               context="{'default_employee_id': id,'default_category_expense':'1'}" readonly="1">
+
+            <list readonly="1">
+
+                <field name="date"/>
+                 <field name="employee_id"/>
+                 <field name="lec_number"/>
+
+                <!-- <field name="category"/> -->
+
+                <field name="amount"/>
+
+                <field name="notes"/>
+
+            </list>
+
+            <!-- <form>
+
+                <group>
+
+                    <group>
+
+                        <field name="employee_id"
+                               readonly="1"/> 
+
+                        <field name="amount"/>
+
+                    </group>
+
+                    <group>
+
+                        <field name="date"/>
+
+                        <field name="owner"/>
+
+                    </group>
+
+                </group>
+
+                <group>
+
+                    <field name="purpose"/>
+
+                    <field name="notes"/>
+
+                </group>
+
+            </form> -->
+
+        </field>
+
+    </page>
+
+    <!-- Salafists -->
+
+    <page string="السلفيات">
+
+        <field name="salafists_ids">
+
+            <list editable="bottom">
+
+                <field name="date"/>
+
+                <field name="amount"/>
+
+                <field name="notes"/>
+
+            </list>
+
+        </field>
+
+    </page>
+
+</notebook>
+</sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_employee_tree" model="ir.ui.view">
+        <field name="name">school.employee.tree</field>
+        <field name="model">school.employee</field>
+        <field name="arch" type="xml">
+            <list string="الموظفين والعمال">
+                <field name="name"/>
+                <!-- <field name="category"/> -->
+                 <!-- <field name="employee_id"/> -->
+
+                <field name="subject_ids"/>
+                <!-- <field name="lec_number"/> -->
+                <field name="salary"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Menu for Workers -->
+       <record id="action_school_employee" model="ir.actions.act_window">
+        <field name="name">الموظفين والعمال</field>
+        <field name="res_model">school.employee</field>
+        <field name="view_mode">list,form</field>
+
+                
+    </record>  
+    
+    <menuitem id="menu_schools_employee" name="الأساتذة والموظفين " action="action_school_employee" 
+         web_icon="school_model_v2,static/description/303281881582967221-512.png"
+    />
+    
+    <!-- <menuitem id="menu_school_employee" name="employee" action="action_school_employee" sequence="2" parent="center_view_root_menu"/>
+   <menuitem id="menu_school3_expense" name="منصرفات الأساتذة" action="action_school_expense" parent="menu_schools_employee"  
+     
+    /> -->
+ 
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_exam3_expense_statistics" model="ir.actions.act_window">
+        <field name="name">exam expense 3 Statistics</field>
+        <field name="res_model">school.expense</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <!-- فلترة مبدئية على القسط الأول -->
+        <field name="domain">[('exam_type','=','exam_3')]</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_exam3_expense_statistics" 
+              name="exam 3 Statistics"
+              parent="exam_expense_statistics"
+              action="action_exam3_expense_statistics"
+               />
+
+    <!-- Pivot View -->
+    <record id="view_exam3_expense_pivot" model="ir.ui.view">
+        <field name="name">exam.expense.pivot</field>
+        <field name="model">school.expense</field>
+        <field name="arch" type="xml">
+            <pivot string="exam expense Statistics">
+                <field name="amount" type="measure"/>  
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view__exam3_expense_graph" model="ir.ui.view">
+        <field name="name">payment._exam3_expense.graph</field>
+        <field name="model">school.expense</field>
+        <field name="arch" type="xml">
+            <graph string="Installment 3 Graph" type="bar">
+                <field name="amount" type="measure"/>  
+            </graph>
+        </field>
+    </record>
+</odoo>

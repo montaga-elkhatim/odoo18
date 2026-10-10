@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_not_installment4_statistics" model="ir.actions.act_window">
+        <field name="name">No Installment 4 Statistics</field>
+        <field name="res_model">student</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <!-- فلترة مبدئية على القسط الأول -->
+        <field name="domain">[('installment4_paid','=',0),('remaining_fees','!=',0)]</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_not_installment4_statistics" 
+              name="Not Installment 4 Statistics"
+              parent="not_installment_statistics"
+              action="action_not_installment4_statistics"
+             />
+
+    <!-- Pivot View -->
+    <record id="view_not_installment4_pivot" model="ir.ui.view">
+        <field name="name">payment.installment4.pivot</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <pivot string="Not Installment 4 Statistics">
+            
+                <field name="total_fees" type="measure"/> 
+                <field name="total_paid" type="measure"/>
+                <field name="remaining_fees" type="measure"/> 
+                <field name="grade" type="row" string="Class"/>
+                <field name="class_section" type="row" string="Section"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_not_installment4_graph" model="ir.ui.view">
+        <field name="name">payment.installment4.graph</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <graph string="Installment 4 Graph" type="bar"> 
+                <field name="total_paid" type="measure"/>
+                <field name="grade" type="row" string="Class"/>
+                <field name="class_section" type="row" string="Section"/>
+            </graph>
+        </field>
+    </record>
+</odoo>

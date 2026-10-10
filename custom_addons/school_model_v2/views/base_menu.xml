@@ -1,0 +1,33 @@
+<odoo>
+    <menuitem
+        id="center_view_root_menu"
+        name="إعدادات المدرسة" 
+        web_icon="school_model_v2,static/description/1772484271896.png"
+   />  
+    
+        <menuitem
+         
+        id="installment_statistics"
+        name="Fees Statistics" 
+        web_icon="school_model_v2,static/description/13657961051557740363-512.png"
+        />  
+        <menuitem
+        
+        id="not_installment_statistics"
+        name="Not Installment Statistics"
+        web_icon="school_model_v2,static/description/20623635981715247275-512.png"
+         />  
+        <menuitem
+         
+        id="exam_expense_statistics"
+        name="Exam Expense Statistics"
+        web_icon="school_model_v2,static/description/15670147461681896531-512.png"
+
+        sequence="6" /> 
+        <menuitem 
+        id="expenses_statistics"
+        name="Expense Statistics"
+        web_icon="school_model_v2,static/description/762986001667324349-512.png"
+
+         />     
+</odoo>

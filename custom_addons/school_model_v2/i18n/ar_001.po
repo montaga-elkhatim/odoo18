@@ -1,0 +1,1134 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_model_v2
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250509\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-24 09:58+0000\n"
+"PO-Revision-Date: 2025-09-24 09:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__academic_year__2024
+msgid "2024"
+msgstr ""
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__academic_year__2025
+msgid "2025"
+msgstr ""
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__academic_year__2026
+msgid "2026"
+msgstr "2025"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__academic_year__2027
+msgid "2027"
+msgstr ""
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.center_view_root_menu
+msgid "Al-Manhal Schools"
+msgstr "مدارس المنهل"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__section__biology
+msgid "Biology"
+msgstr "احياء"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment1_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment1_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment2_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment2_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment3_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment3_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment4_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment4_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment5_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment5_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment1_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment1_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment2_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment2_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment3_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment3_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment4_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment4_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment5_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment5_pivot
+msgid "Class"
+msgstr "الفصل"
+
+#. module: school_model_v2
+#: model_terms:ir.actions.act_window,help:school_model_v2.payment_action
+msgid "Create some payment to see their info in this view."
+msgstr ""
+
+#. module: school_model_v2
+#: model_terms:ir.actions.act_window,help:school_model_v2.student_action
+msgid "Create some student to see their info in this view."
+msgstr ""
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__create_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__create_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__create_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__create_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__create_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_student__create_uid
+msgid "Created by"
+msgstr "اتسجل بواسطة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__create_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__create_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__create_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__create_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__create_date
+#: model:ir.model.fields,field_description:school_model_v2.field_student__create_date
+msgid "Created on"
+msgstr "اتسجل بتاريخ"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__health_status__disabled
+msgid "Disabled"
+msgstr "معاق"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__discount_type
+msgid "Discount Type"
+msgstr "نوع التخفيض"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__discount_value
+msgid "Discount Value"
+msgstr "قيمة التخفيض"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__display_name
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__display_name
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__display_name
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__display_name
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__display_name
+#: model:ir.model.fields,field_description:school_model_v2.field_student__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__section__engineer
+msgid "Engineer"
+msgstr "هندسية"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__section__studies
+msgid "Etudies"
+msgstr "دراسات"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.exam_expense_statistics
+msgid "Exam Expense Statistics"
+msgstr "احصائيات منصرفات الامتحانات"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_school_expense
+msgid "Expense"
+msgstr "المنصرفات"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.expenses_statistics
+msgid "Expense Statistics"
+msgstr "احصائيات المنصرفات"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_fees_statistics
+#: model:ir.ui.menu,name:school_model_v2.installment_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_fees_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_fees_statistics_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_fees_statistics_pivot
+msgid "Fees Statistics"
+msgstr "احصائيات الاقساط"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__discount_type__5
+msgid "Free"
+msgstr "مجانا"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__payment__payment_type__full
+msgid "Full Payment"
+msgstr "دفع كامل"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__discount_type__3
+msgid "Has a Brother"
+msgstr "له اخ طالب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__id
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__id
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__id
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__id
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__id
+#: model:ir.model.fields,field_description:school_model_v2.field_student__id
+msgid "ID"
+msgstr "?? id"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__image
+msgid "Image"
+msgstr "صورة"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__payment__payment_type__installment1
+msgid "Installment 1"
+msgstr "القسط الاول"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view__exam_expense_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment1_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment1_graph
+msgid "Installment 1 Graph"
+msgstr "Graph القسط الاول "
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__installment1_paid
+msgid "Installment 1 Paid"
+msgstr "القسط الاول المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_installment1_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_installment1_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment1_pivot
+msgid "Installment 1 Statistics"
+msgstr "احصائيات القسط الاول المدفوع"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__payment__payment_type__installment2
+msgid "Installment 2"
+msgstr "القسط الثاني"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view__exam2_expense_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment2_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment2_graph
+msgid "Installment 2 Graph"
+msgstr "Graph القسط الثاني"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__installment2_paid
+msgid "Installment 2 Paid"
+msgstr "القسط الثاني المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_installment2_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_installment2_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment2_pivot
+msgid "Installment 2 Statistics"
+msgstr "احصائيات القسط الثاني المدفوع"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__payment__payment_type__installment3
+msgid "Installment 3"
+msgstr "القسط الثالث"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view__exam3_expense_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view__exam_experimental_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment3_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment3_graph
+msgid "Installment 3 Graph"
+msgstr "Graph القسط الثالث"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__installment3_paid
+msgid "Installment 3 Paid"
+msgstr "القسط الثالث المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_installment3_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_installment3_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment3_pivot
+msgid "Installment 3 Statistics"
+msgstr "احصائيات القسط الثالث المدفوع"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__payment__payment_type__installment4
+msgid "Installment 4"
+msgstr "القسط الرابع"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment4_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment4_graph
+msgid "Installment 4 Graph"
+msgstr "graph القسط الرابع"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__installment4_paid
+msgid "Installment 4 Paid"
+msgstr "القسط الرابع المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_installment4_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_installment4_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment4_pivot
+msgid "Installment 4 Statistics"
+msgstr "احصائيات القسط الرابع المدفوع"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__payment__payment_type__installment5
+msgid "Installment 5"
+msgstr "القسط الخامس"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment5_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment5_graph
+msgid "Installment 5 Graph"
+msgstr "graph القسط الخامس"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__installment5_paid
+msgid "Installment 5 Paid"
+msgstr "القسط الخامس المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_installment5_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_installment5_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment5_pivot
+msgid "Installment 5 Statistics"
+msgstr "احصائيات القسط الخامس المدفوع"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__write_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__write_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__write_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__write_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__write_uid
+#: model:ir.model.fields,field_description:school_model_v2.field_student__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__write_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__write_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__write_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__write_date
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__write_date
+#: model:ir.model.fields,field_description:school_model_v2.field_student__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل بتاريخ"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_not_installment1_statistics
+msgid "No Installment 1 Statistics"
+msgstr "احصائيات القسط الاول غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_not_installment2_statistics
+msgid "No Installment 2 Statistics"
+msgstr "احصائيات القسط الثاني غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_not_installment3_statistics
+msgid "No Installment 3 Statistics"
+msgstr "احصائيات القسط الثالث غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_not_installment4_statistics
+msgid "No Installment 4 Statistics"
+msgstr "احصائيات القسط الرابع غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_not_installment5_statistics
+msgid "No Installment 5 Statistics"
+msgstr "احصائيات القسط الخامس غير المدفوع"
+
+#. module: school_model_v2
+#: model_terms:ir.actions.act_window,help:school_model_v2.payment_action
+msgid "No payment to show"
+msgstr "No payment to show"
+
+#. module: school_model_v2
+#: model_terms:ir.actions.act_window,help:school_model_v2.student_action
+msgid "No student to show"
+msgstr "No student to show"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_not_installment1_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment1_pivot
+msgid "Not Installment 1 Statistics"
+msgstr "احصائيات القسط الاول غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_not_installment2_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment2_pivot
+msgid "Not Installment 2 Statistics"
+msgstr "احصائيات القسط الثاني غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_not_installment3_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment3_pivot
+msgid "Not Installment 3 Statistics"
+msgstr "احصائيات القسط الثالث غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_not_installment4_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment4_pivot
+msgid "Not Installment 4 Statistics"
+msgstr "احصائيات القسط الرابع غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_not_installment5_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment5_pivot
+msgid "Not Installment 5 Statistics"
+msgstr "احصائيات القسط الخامس غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.not_installment_statistics
+msgid "Not Installment Statistics"
+msgstr "احصائيات الاقساط غير المدفوع"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__discount_type__4
+msgid "Orphan"
+msgstr "يتيم"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__health_status__other
+msgid "Other"
+msgstr "اخري"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.student_view_form
+msgid "Parant Info"
+msgstr "بيانات ولي الامر"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.payment_action
+#: model:ir.ui.menu,name:school_model_v2.payment_items_menu
+msgid "Payment"
+msgstr "الدفعيات"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__payment_date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__payment_type
+msgid "Payment Type"
+msgstr "نوع الدفع"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__payment_ids
+#: model_terms:ir.ui.view,arch_db:school_model_v2.student_view_form
+msgid "Payments"
+msgstr "الدفعيات"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__remaining_fees
+msgid "Remaining Fees"
+msgstr "الرسوم المتبقية"
+
+#. module: school_model_v2
+#: model:ir.model,name:school_model_v2.model_school_expense
+msgid "School Expenses"
+msgstr "منصرفات المدرسة"
+
+#. module: school_model_v2
+#: model:ir.model,name:school_model_v2.model_school_salafist
+msgid "School salafists"
+msgstr "سلفيات المدرسة"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment1_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment1_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment2_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment2_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment3_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment3_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment4_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment4_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment5_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_installment5_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment1_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment1_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment2_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment2_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment3_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment3_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment4_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment4_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment5_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_not_installment5_pivot
+msgid "Section"
+msgstr "قسم"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__health_status__sick
+msgid "Sick"
+msgstr "مريض"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__discount_type__2
+msgid "Son Of Teacher"
+msgstr "ابن استاذ"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_payment__student_id
+#: model:ir.ui.menu,name:school_model_v2.student_items_menu
+msgid "Student"
+msgstr "الطلاب"
+
+#. module: school_model_v2
+#: model:ir.model,name:school_model_v2.model_payment
+msgid "Student Payment"
+msgstr "دفعيات الطلاب"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.student_action
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__total_fees
+msgid "Total Fees"
+msgstr "الرسوم الكلية"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__total_paid
+msgid "Total Paid"
+msgstr "الرسوم المدفوعة"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__health_status__well
+msgid "Well"
+msgstr "بصحة جيدة"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__discount_type__1
+msgid "Without Discount"
+msgstr "بدون تخفيض"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__academic_year
+msgid "academic year"
+msgstr "السنة الدراسية"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_worker__job_position__accountant
+msgid "accountant"
+msgstr "محاسب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__active
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__active
+msgid "active"
+msgstr "نشط"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__admin
+msgid "admin"
+msgstr "موظف"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_admin_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_admin_pivot
+msgid "admin name"
+msgstr "اسم الموظف"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_admin_graph
+msgid "admin salary Graph"
+msgstr "graph راتب الاداريين"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_school_expense_admin_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_school_expense_admin_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_admin_pivot
+msgid "admin salary Statistics"
+msgstr "احصائيات رواتب الاداريين"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__amount
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__amount
+msgid "amount"
+msgstr "المبلغ"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__arabic
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_teacher__subject_name__arabic
+msgid "arabic"
+msgstr "اللغة العربية"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__bailogy
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_teacher__subject_name__bailogy
+msgid "bailogy"
+msgstr "الاحياء"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__chemistry
+msgid "chemistry"
+msgstr "الكيمياء"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_expense_type__control
+msgid "control"
+msgstr "المراقبة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__control_number
+msgid "control_number"
+msgstr "عدد المراقبات"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_expense_type__copy
+msgid "copy"
+msgstr "نسخ"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_expense_type__correction
+msgid "correction"
+msgstr "تصحيح"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__course_ids
+msgid "courses"
+msgstr "الكورسات"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_daily_expenditures_graph
+msgid "daily expenditures Graph"
+msgstr "Graph المنصرفات اليومية"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_daily_expenditures_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_daily_expenditures_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_daily_expenditures_pivot
+msgid "daily expenditures Statistics"
+msgstr "احصائيات المنصرفات اليومية"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__dayle_expense
+msgid "dayle_expense"
+msgstr "الصرف اليومي"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.student_view_form
+msgid "e.g. 091234567"
+msgstr "مثلا 091234567"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__electricity
+msgid "electricity"
+msgstr "الكهرباء"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_school_worker
+msgid "employee"
+msgstr "موظف"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__english
+msgid "english"
+msgstr "الانجليزي"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__exam
+msgid "exam"
+msgstr "امتحان"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_type__exam_1
+msgid "exam 1"
+msgstr "الامتحان الاول"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_exam_expense_statistics
+msgid "exam 1 Statistics"
+msgstr "احصائيات الامتحان الاول"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_type__exam_2
+msgid "exam 2"
+msgstr "الامتحان الثاني"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_exam2_expense_statistics
+msgid "exam 2 Statistics"
+msgstr "احصائيات الامتحان الثاني"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_type__exam_3
+msgid "exam 3"
+msgstr "الامتحان الثالث"
+
+#. module: school_model_v2
+#: model:ir.ui.menu,name:school_model_v2.menu_exam3_expense_statistics
+msgid "exam 3 Statistics"
+msgstr "احصائيات الامتحان الثالث"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_exam_expense_statistics
+msgid "exam expense 1 Statistics"
+msgstr "احصائيات منصرفات الامتحان الاول"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_exam2_expense_statistics
+msgid "exam expense 2 Statistics"
+msgstr "احصائيات منصرفات الامتحان الثاني"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_exam3_expense_statistics
+msgid "exam expense 3 Statistics"
+msgstr "احصائيات منصرفات الامتحان الثالث"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_exam2_expense_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_exam3_expense_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_exam_expense_pivot
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_exam_experimental_pivot
+msgid "exam expense Statistics"
+msgstr "احصائيات منصرفات الامتحانات"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__exam_expense_type
+msgid "exam expense type"
+msgstr "نوع صرف الامتحان"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_exam_experimental_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_exam_experimental_statistics
+msgid "exam experimenta Statistics"
+msgstr "احصائيات منصرفات الامتحان التجريبي"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__exam_type
+msgid "exam type"
+msgstr "نوع الامتحان"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__expense_ids
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__expense_ids
+msgid "expense"
+msgstr "المنصرفات"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_daily_expenditures_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_daily_expenditures_pivot
+msgid "expense_type"
+msgstr "نوع المنصرفات"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_type__experimental
+msgid "experimental"
+msgstr "التجريبي"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__geographically
+msgid "geographically"
+msgstr "جغرافيا"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__history
+msgid "history"
+msgstr "تاريخ"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__islamic
+msgid "islamic"
+msgstr "اسلامية"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__job_position
+msgid "job position"
+msgstr "نوع الوظيفة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__lec_number
+msgid "lec number"
+msgstr "عدد الحصص"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_salafist_tree
+msgid "list of salafist"
+msgstr "قائمة السلفيات"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__maintenance
+msgid "maintenance"
+msgstr "الصيانة"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_salafist__type_empol__manager
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_worker__job_position__manager
+msgid "manager"
+msgstr "مدير"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__math
+msgid "math"
+msgstr "رياضيات"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__teacher_id
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__worker_id
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__name
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__name
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_salafist_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_salafist_pivot
+msgid "name"
+msgstr "الاسم"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__notes
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__notes
+msgid "notes"
+msgstr "الملاحظات"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__other
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__other
+msgid "other"
+msgstr "اخري"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__owner
+msgid "owner"
+msgstr "المالك"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__papers_number
+msgid "papers_number"
+msgstr "عدد الصفحات"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.payment_view_form
+msgid "payment info"
+msgstr "معلومات الدفع"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__subject_name__physics
+msgid "physics"
+msgstr "فيزياء"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__exam_expense_type__print
+msgid "print"
+msgstr "طباعة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__purpose
+msgid "purpose"
+msgstr "غرض"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__rent
+msgid "rent"
+msgstr "ايجار"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_rent_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_rent_pivot
+msgid "rent name"
+msgstr "المستاجر"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_rent_graph
+msgid "rent salary Graph"
+msgstr "graph الايجارات"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_school_expense_rent_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_school_expense_rent_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_rent_pivot
+msgid "rent salary Statistics"
+msgstr "احصائيات منصرفات الايجارات"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__salafists_ids
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__salafists_admin_ids
+#: model:ir.ui.menu,name:school_model_v2.menu_school_salafist
+msgid "salafist"
+msgstr "السلفيات"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_salafist_graph
+msgid "salafist Graph"
+msgstr "graph  السلفيات"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_salafist_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_salafist_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_salafist_pivot
+msgid "salafist Statistics"
+msgstr "احصائيات السلفيات"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_teacher_form
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_worker_form
+msgid "salafists"
+msgstr "السلفيات"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_teacher_form
+msgid "salafists_ids"
+msgstr "السلفيات"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__salary
+#: model:ir.model.fields,field_description:school_model_v2.field_school_worker__salary
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__salary
+msgid "salary"
+msgstr "المبلغ"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_teacher_form
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_worker_form
+msgid "salarys"
+msgstr "المبلغ"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_school_expense
+msgid "school expense"
+msgstr "منصرفات المدرسة"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_school_salafist
+msgid "school salafist"
+msgstr "سلفيات المدرسة"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_school_teacher
+msgid "school teacher"
+msgstr "اساتذة المدرسة"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_school_worker
+msgid "school worker"
+msgstr "موظفين المدرسة"
+
+#. module: school_model_v2
+#: model:ir.model,name:school_model_v2.model_school_worker
+msgid "school.worker"
+msgstr "موظفين المدرسة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__section
+msgid "section"
+msgstr "القسم"
+
+#. module: school_model_v2
+#: model:ir.model,name:school_model_v2.model_student
+msgid "student"
+msgstr "الطالب"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.student_view_form
+msgid "student info"
+msgstr "معلومات الطالب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__subject_name
+#: model:ir.model.fields,field_description:school_model_v2.field_school_teacher__subject_name
+msgid "subject"
+msgstr "المادة"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_worker__job_position__supervisor
+msgid "supervisor"
+msgstr "مشرف"
+
+#. module: school_model_v2
+#: model:ir.model,name:school_model_v2.model_school_teacher
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_salafist__type_empol__teacher
+#: model:ir.ui.menu,name:school_model_v2.menu_school_teacher
+msgid "teacher"
+msgstr "استاذ"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__salafist_id
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_teacher_salary_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_teacher_salary_pivot
+msgid "teacher name"
+msgstr "اسم الاستاذ"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_teacher_salary_graph
+msgid "teacher salary Graph"
+msgstr "graph رواتب الاساتذة"
+
+#. module: school_model_v2
+#: model:ir.actions.act_window,name:school_model_v2.action_teacher_salary_statistics
+#: model:ir.ui.menu,name:school_model_v2.menu_teacher_salary_statistics
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_teacher_salary_pivot
+msgid "teacher salary Statistics"
+msgstr "احصائيات رواتب الاساتذة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__type_empol
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_salafist_graph
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_salafist_pivot
+msgid "type of empol"
+msgstr "نوع الموظف"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__uniform
+msgid "uniform"
+msgstr "الزي المدرسي"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_expense__category__water
+msgid "water"
+msgstr "المياة"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__school_worker__job_position__worker
+msgid "worker"
+msgstr "الموظفين"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_salafist__salafists_admin_id
+msgid "worker name"
+msgstr "اسم الموظف"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__state__other
+msgid "أخرى"
+msgstr "أخرى"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__father_name
+msgid "اسم الأب"
+msgstr "اسم الأب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__mother_name
+msgid "اسم الأم"
+msgstr "اسم الأم"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__name
+msgid "اسم الطالب"
+msgstr "اسم الطالب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_school_expense__category
+msgid "التصنيف"
+msgstr "التصنيف"
+
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__health_status
+msgid "الحالة الصحية"
+msgstr "الحالة الصحية"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__state__khartoum
+msgid "الخرطوم"
+msgstr "الخرطوم"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__state__north
+msgid "الشمالية"
+msgstr "الشمالية"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__grade
+msgid "الصف الدراسي"
+msgstr "الصف الدراسي"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__class_section
+msgid "الفصل"
+msgstr "الفصل"
+
+#. module: school_model_v2
+#: model:ir.model.fields.selection,name:school_model_v2.selection__student__state__gedarif
+msgid "القضارف"
+msgstr "القضارف"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__locality
+msgid "المحلية"
+msgstr "المحلية"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__percentage
+msgid "النسبة"
+msgstr "النسبة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__state
+msgid "الولاية"
+msgstr "الولاية"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_salafist_form
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_teacher_form
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_worker_form
+msgid "بيانات العامل"
+msgstr "بيانات العامل"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__birth_date
+msgid "تاريخ الميلاد"
+msgstr "تاريخ الميلاد"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__full_payment
+msgid "دفع كامل؟"
+msgstr "دفع كامل؟"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__address
+msgid "عنوان السكن"
+msgstr "عنوان السكن"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_teacher_tree
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_worker_tree
+msgid "قائمة العمال"
+msgstr "قائمة العمال"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__primary_total
+msgid "مجموع الأساس"
+msgstr "مجموع الأساس"
+
+#. module: school_model_v2
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_form
+#: model_terms:ir.ui.view,arch_db:school_model_v2.view_school_expense_tree
+msgid "منصرفات المدرسة"
+msgstr "منصرفات المدرسة"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__father_phone
+msgid "هاتف الأب"
+msgstr "هاتف الأب"
+
+#. module: school_model_v2
+#: model:ir.model.fields,field_description:school_model_v2.field_student__mother_phone
+msgid "هاتف الأم"
+msgstr "هاتف الأم"
