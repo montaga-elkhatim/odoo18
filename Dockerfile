@@ -3,9 +3,9 @@ FROM odoo:18.0
 USER root
 
 COPY odoo.conf /etc/odoo/odoo.conf
-COPY ./reset_password.py /usr/local/bin/reset_password.py
+COPY custom_addons/ /mnt/extra-addons/
 
-RUN ls -l /usr/local/bin/reset_password.py
+RUN chown -R odoo:odoo /mnt/extra-addons
 
 USER odoo
 
