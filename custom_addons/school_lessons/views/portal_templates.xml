@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- إضافة رابط "حصصي" في قائمة البورتال الرئيسية -->
+        <template id="portal_my_home_lessons" inherit_id="portal.portal_my_home" name="رابط الحصص في البورتال">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <a href="/my/lessons" class="o_portal_category_card card shadow-sm mb-3">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fa fa-play-circle fa-2x me-3" role="img" aria-label="Lessons" title="Lessons"/>
+                        <div>
+                            <h5 class="mb-0">حصصي الدراسية</h5>
+                            <span class="text-muted small">شاهد الفيديوهات وملفات الـ PDF لحصصك</span>
+                        </div>
+                    </div>
+                </a>
+            </xpath>
+        </template>
+
+        <!-- الطالب مش مسجل في موديول الطلاب -->
+        <template id="portal_no_student_template" name="لا يوجد طالب مرتبط">
+            <t t-call="portal.portal_layout">
+                <div class="container mt-4" dir="rtl">
+                    <div class="alert alert-warning">
+                        حسابك غير مرتبط بسجل طالب. من فضلك تواصل مع إدارة المدرسة.
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- ==================== قائمة الحصص ==================== -->
+        <template id="portal_lessons_list_template" name="حصصي الدراسية">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <div class="container mt-4" dir="rtl">
+                    <h2 class="mb-4">حصصي الدراسية - <t t-esc="student.grade.name"/></h2>
+
+                    <!-- فلتر المواد -->
+                    <div class="mb-4">
+                        <a t-attf-href="/my/lessons"
+                           t-attf-class="btn btn-sm #{not current_subject_id and 'btn-primary' or 'btn-outline-primary'} me-1">
+                            الكل
+                        </a>
+                        <t t-foreach="subjects" t-as="subj">
+                            <a t-attf-href="/my/lessons/subject/#{subj.id}"
+                               t-attf-class="btn btn-sm #{current_subject_id == subj.id and 'btn-primary' or 'btn-outline-primary'} me-1">
+                                <t t-esc="subj.name"/>
+                            </a>
+                        </t>
+                    </div>
+
+                    <div t-if="not lessons" class="alert alert-info">
+                        لا توجد حصص منشورة حاليًا.
+                    </div>
+
+                    <div class="row">
+                        <t t-foreach="lessons" t-as="lesson">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <span t-if="lesson.id in viewed_lesson_ids"
+                                              class="badge bg-success float-end">تمت المشاهدة</span>
+                                        <span t-else="" class="badge bg-secondary float-end">جديد</span>
+
+                                        <h5 class="card-title">
+                                            <t t-if="lesson.lesson_type in ('video_upload','video_link','mixed')">
+                                                🎬
+                                            </t>
+                                            <t t-else="">📄</t>
+                                            <t t-esc="lesson.name"/>
+                                        </h5>
+                                        <p class="text-muted mb-1">
+                                            <t t-esc="lesson.subject_id.name"/>
+                                        </p>
+                                        <p class="small text-muted">
+                                            <t t-esc="lesson.date_published"/>
+                                        </p>
+                                        <a t-attf-href="/my/lessons/#{lesson.id}"
+                                           class="btn btn-primary btn-sm">
+                                            شاهد الحصة
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- ==================== تفاصيل الحصة ==================== -->
+        <template id="portal_lesson_detail_template" name="تفاصيل الحصة">
+            <t t-call="portal.portal_layout">
+                <div class="container mt-4" dir="rtl">
+                    <a href="/my/lessons" class="btn btn-link mb-3">&#8592; رجوع لكل الحصص</a>
+
+                    <h2><t t-esc="lesson.name"/></h2>
+                    <p class="text-muted">
+                        <t t-esc="lesson.subject_id.name"/> —
+                        <t t-esc="lesson.teacher_id.name"/> —
+                        <t t-esc="lesson.date_published"/>
+                    </p>
+
+                    <!-- فيديو عن طريق رابط خارجي -->
+                    <div t-if="lesson.lesson_type in ('video_link','mixed') and lesson.video_embed_url"
+                         class="ratio ratio-16x9 mb-4">
+                        <iframe t-att-src="lesson.video_embed_url"
+                                allowfullscreen="allowfullscreen"
+                                frameborder="0"/>
+                    </div>
+
+                    <!-- الملفات المرفقة (فيديوهات مرفوعة + PDF) -->
+                    <div t-if="lesson.attachment_ids" class="mb-4">
+                        <t t-foreach="lesson.attachment_ids" t-as="att">
+                            <div class="mb-3">
+                                <!-- فيديو مرفوع: يتعرض بشكل مباشر -->
+                                <div t-if="(att.mimetype or '').startswith('video/')" class="ratio ratio-16x9 mb-2">
+                                    <video controls="controls" style="width:100%;">
+                                        <source t-att-src="'/my/lessons/%s/file/%s' % (lesson.id, att.id)"
+                                                t-att-type="att.mimetype"/>
+                                    </video>
+                                </div>
+
+                                <!-- PDF: يتعرض جوه iframe + رابط تحميل -->
+                                <div t-elif="(att.mimetype or '') == 'application/pdf'" class="mb-2">
+                                    <iframe t-att-src="'/my/lessons/%s/file/%s' % (lesson.id, att.id)"
+                                            style="width:100%; height:600px; border:1px solid #ddd;"/>
+                                </div>
+
+                                <a t-att-href="'/my/lessons/%s/file/%s' % (lesson.id, att.id)"
+                                   class="btn btn-outline-secondary btn-sm" target="_blank">
+                                    ⬇ <t t-esc="att.name"/>
+                                </a>
+                            </div>
+                        </t>
+                    </div>
+
+                    <div t-if="lesson.description" class="card">
+                        <div class="card-body">
+                            <t t-raw="lesson.description"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

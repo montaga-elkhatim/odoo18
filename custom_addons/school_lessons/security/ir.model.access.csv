@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_school_lesson_teacher,school.lesson.teacher,model_school_lesson,group_school_teacher,1,1,1,1
+access_school_lesson_manager,school.lesson.manager,model_school_lesson,group_school_lessons_manager,1,1,1,1
+access_school_lesson_portal,school.lesson.portal,model_school_lesson,base.group_portal,1,0,0,0
+access_school_lesson_view_log_teacher,school.lesson.view.log.teacher,model_school_lesson_view_log,group_school_teacher,1,1,1,0
+access_school_lesson_view_log_manager,school.lesson.view.log.manager,model_school_lesson_view_log,group_school_lessons_manager,1,1,1,1
