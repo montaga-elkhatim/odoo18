@@ -3,8 +3,10 @@ FROM odoo:18.0
 USER root
 
 COPY odoo.conf /etc/odoo/odoo.conf
-COPY reset_password.py /tmp/reset_password.py
+COPY ./reset_password.py /usr/local/bin/reset_password.py
+
+RUN ls -l /usr/local/bin/reset_password.py
 
 USER odoo
 
-CMD ["python3", "/tmp/reset_password.py"]
+CMD ["python3", "/usr/local/bin/reset_password.py"]
